@@ -71,7 +71,7 @@ rm -rf /etc/kubeedge
 可以参考[默认deploy](./yamls/deploy.yaml)的18-27行
 
 
-如果有帮助请给个start
+如果有帮助请给个star
 
 欢迎关注我的公众号：
 
