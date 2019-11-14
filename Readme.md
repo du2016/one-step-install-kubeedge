@@ -2,7 +2,7 @@
 
 # 环境
 
-- 两台centos7服务器
+- 两台centos7服务器，虚拟机也可以（master 根据kubeadm说明需要2c2g以上、edge node根据官方测试结果，40m内存就能跑起来，应该现有的任何设备都能跑起来）
 - master需要免密码登录edge节点，如果拷贝秘钥，请先手动连一次接收指纹
 - 关闭iptables和selinux
 - 如果安装过请参考下面的清理操作
