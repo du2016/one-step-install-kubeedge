@@ -3,10 +3,12 @@
 本安装程序基于master进行编译
 如需指定版本编译请down完源码切换到指定版本后执行
 
+```
 GOFLAGS="-mod=vendor" make all WHAT=cloudcore
 GOFLAGS="-mod=vendor" make all WHAT=edgecore
+```
 
-然后将源码目录下edge/edgecore,cloud/cloud/cloudcore拷贝替换本目录下的edgecore/edgecore,cloudcore/cloudcore
+然后将源码目录下`edge/edgecore`,`cloud/cloudcore`拷贝替换本目录下的`edgecore/edgecore`,`cloudcore/cloudcore`
 
 # 环境
 
