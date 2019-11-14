@@ -40,3 +40,10 @@ rm -rf /etc/kubeedge
 安装后默认给edge节点添加了污点（taint）,需要运行在edge上的服务需要通过pod亲和性选择到该节点上面，然后容忍（tolerations）edgenode的污点（taint）
 
 可以参考[默认deploy](./yamls/deploy.yaml)的18-27行
+
+
+如果有帮助请给个start
+
+欢迎关注我的公众号：
+
+![微信](http://q08i5y6c2.bkt.clouddn.com/qrcode_for_gh_7457c3b1bfab_258.jpg)
