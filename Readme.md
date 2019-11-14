@@ -1,5 +1,13 @@
 # 一键安装kubeedge测试环境
 
+本安装程序基于master进行编译
+如需指定版本编译请down完源码切换到指定版本后执行
+
+GOFLAGS="-mod=vendor" make all WHAT=cloudcore
+GOFLAGS="-mod=vendor" make all WHAT=edgecore
+
+然后将源码目录下edge/edgecore,cloud/cloud/cloudcore拷贝替换本目录下的edgecore/edgecore,cloudcore/cloudcore
+
 # 环境
 
 - 两台centos7服务器，虚拟机也可以（master 根据kubeadm说明需要2c2g以上、edge node根据官方测试结果，40m内存就能跑起来，应该现有的任何设备都能跑起来）
