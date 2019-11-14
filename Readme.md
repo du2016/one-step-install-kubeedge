@@ -3,12 +3,17 @@
 # 环境
 
 - 两台centos7服务器
-- 免密码登录 如果拷贝秘钥 请先手动连一次接收指纹
+- master需要免密码登录edge节点，如果拷贝秘钥，请先手动连一次接收指纹
 - 关闭iptables和selinux
+- 如果安装过请参考下面的清理操作
 
 # 安装
 
+```
+git clone  https://github.com/du2016/one-step-install-kubeedge
 MASTER_NODE=主节点的IP EDGE_NODE=边缘节点的IP bash install.sh
+```
+
 # 清理
 
 ## 清理master node
