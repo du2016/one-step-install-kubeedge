@@ -1,7 +1,7 @@
 # 一键安装kubeedge测试环境
 
 本安装程序基于master进行编译
-如需指定版本编译请down完源码切换到指定版本后执行
+如需指定版本编译请down完源码，切换到指定版本后执行
 
 ```
 GOFLAGS="-mod=vendor" make all WHAT=cloudcore
