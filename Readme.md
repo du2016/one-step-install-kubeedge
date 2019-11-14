@@ -10,6 +10,13 @@ GOFLAGS="-mod=vendor" make all WHAT=edgecore
 
 然后将源码目录下`edge/edgecore`,`cloud/cloudcore`拷贝替换本目录下的`edgecore/edgecore`,`cloudcore/cloudcore`
 
+安装了以下组件：
+
+- k8s - 使用kubeadm安装
+- edgecore
+- cloudcore
+- mosquitto
+
 # 环境
 
 - 两台centos7服务器，虚拟机也可以（master 根据kubeadm说明需要2c2g以上、edge node根据官方测试结果，40m内存就能跑起来，应该现有的任何设备都能跑起来）
