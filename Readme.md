@@ -24,6 +24,25 @@ git clone  https://github.com/du2016/one-step-install-kubeedge
 MASTER_NODE=主节点的IP EDGE_NODE=边缘节点的IP bash install.sh
 ```
 
+# 效果
+
+master节点执行
+
+查看节点，可以看到edgenode已经注册成功
+```
+kubectl get nodes
+NAME         STATUS   ROLES    AGE   VERSION
+10.10.8.44   Ready    master   28m   v1.16.3
+edge-node    Ready    edge     28m   v1.15.3-kubeedge-v1.1.0-beta.0.205+19180d74ccb85c
+```
+
+查看应用我们可以看到服务已经运行在edge-node上面
+```
+kubectl get pods -o wide
+NAME                                READY   STATUS    RESTARTS   AGE   IP           NODE        NOMINATED NODE   READINESS GATES
+nginx-deployment-655748dfb6-zhl96   1/1     Running   0          27m   172.17.0.2   edge-node   <none>           <none>
+```
+
 # 清理
 
 ## 清理master node
