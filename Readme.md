@@ -31,6 +31,8 @@ git clone  https://github.com/du2016/one-step-install-kubeedge
 MASTER_NODE=主节点的IP EDGE_NODE=边缘节点的IP bash install.sh
 ```
 
+> 如果使用内置mqtt server broker,也就是edge.yaml中mqtt.mode为0或1，请取消install.sh中的最后一行注释
+
 # 效果
 
 master节点执行
