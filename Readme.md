@@ -84,4 +84,4 @@ rm -rf /etc/kubeedge
 
 欢迎关注我的公众号：
 
-![微信](http://q08i5y6c2.bkt.clouddn.com/qrcode_for_gh_7457c3b1bfab_258.jpg)
+![微信](http://img.rocdu.top/qrcode_for_gh_7457c3b1bfab_258.jpg)
