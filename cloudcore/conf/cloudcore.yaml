@@ -1,0 +1,37 @@
+# With --minconfig , you can easily used this configurations as reference.
+# It's useful to users who are new to KubeEdge, and you can modify/create your own configs accordingly.
+# This configuration is suitable for beginners.
+
+apiVersion: cloudcore.config.kubeedge.io/v1alpha1
+kind: CloudCore
+kubeAPIConfig:
+  kubeConfig: /root/.kube/config
+  master: ""
+leaderelection:
+  LeaderElect: false
+  LeaseDuration: 0s
+  RenewDeadline: 0s
+  ResourceLock: ""
+  ResourceName: ""
+  ResourceNamespace: ""
+  RetryPeriod: 0s
+modules:
+  cloudHub:
+    advertiseAddress:
+      - MASTER_NODE
+    https:
+      address: 0.0.0.0
+      enable: true
+      port: 10002
+    nodeLimit: 1000
+    tlsCAFile: /etc/kubeedge/ca/rootCA.crt
+    tlsCAKeyFile: /etc/kubeedge/ca/rootCA.key
+    tlsCertFile: /etc/kubeedge/certs/server.crt
+    tlsPrivateKeyFile: /etc/kubeedge/certs/server.key
+    unixsocket:
+      address: unix:///var/lib/kubeedge/kubeedge.sock
+      enable: true
+    websocket:
+      address: 0.0.0.0
+      enable: true
+      port: 10000

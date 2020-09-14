@@ -1,0 +1,15 @@
+[Unit]
+Description=edgecore
+
+[Service]
+User=root
+EnvironmentFile=
+WorkingDirectory=/etc/kubeedge/
+ExecStart=edgecore --config edgecore.yaml
+ExecReload=
+Restart=on-failure
+RestartSec=10
+SuccessExitStatus=0
+
+[Install]
+WantedBy=multi-user.target

@@ -59,7 +59,7 @@ nginx-deployment-655748dfb6-zhl96   1/1     Running   0          27m   172.17.0.
 如果需要清理请分别执行以下命令
 ```
 pkill -9 cloudcore
-rm -rf /usr/local/cloudcore
+rm -rf /usr/local/bin/cloudcore
 rm -rf /etc/kubeedge
 kubeadm reset
 ```
@@ -67,9 +67,10 @@ kubeadm reset
 ## 清理edge node
 ```
 pkill -9 edgecore
-rm -rf /usr/local/edgecore
+rm -rf /usr/local/bin/edgecore
 rm -rf /tmp/install-docker.sh
 rm -rf /etc/kubeedge
+rm -rf /var/lib/kubeedge/edgecore.db
 ```
 
 

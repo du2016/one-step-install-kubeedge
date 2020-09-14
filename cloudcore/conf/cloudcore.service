@@ -1,0 +1,15 @@
+[Unit]
+Description=cloudcore
+
+[Service]
+User=root
+EnvironmentFile=
+WorkingDirectory=/etc/kubeedge/
+ExecStart=cloudcore --config cloudcore.yaml
+ExecReload=
+Restart=on-failure
+RestartSec=10
+SuccessExitStatus=0
+
+[Install]
+WantedBy=multi-user.target
