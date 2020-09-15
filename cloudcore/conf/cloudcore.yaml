@@ -35,3 +35,13 @@ modules:
       address: 0.0.0.0
       enable: true
       port: 10000
+  cloudStream:
+    enable: true
+    streamPort: 10003
+    tlsStreamCAFile: /etc/kubeedge/ca/streamCA.crt
+    tlsStreamCertFile: /etc/kubeedge/certs/stream.crt
+    tlsStreamPrivateKeyFile: /etc/kubeedge/certs/stream.key
+    tlsTunnelCAFile: /etc/kubeedge/ca/rootCA.crt
+    tlsTunnelCertFile: /etc/kubeedge/certs/server.crt
+    tlsTunnelPrivateKeyFile: /etc/kubeedge/certs/server.key
+    tunnelPort: 10004

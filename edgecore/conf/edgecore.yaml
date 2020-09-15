@@ -30,7 +30,7 @@ modules:
         dockerAddress: unix:///var/run/docker.sock
         gpuPluginEnabled: false
         hostnameOverride: EDGE_NODE
-        interfaceName: eth0
+        interfaceName: ens33
         nodeIP: EDGE_NODE
         podSandboxImage: kubeedge/pause:3.1
         remoteImageEndpoint: unix:///var/run/dockershim.sock
@@ -42,3 +42,12 @@ modules:
         mqttRetain: false
         mqttServerExternal: tcp://127.0.0.1:1883
         mqttServerInternal: tcp://127.0.0.1:1884
+    edgeStream:
+        enable: true
+        handshakeTimeout: 30
+        readDeadline: 15
+        server: MASTER_NODE:10004
+        tlsTunnelCAFile: /etc/kubeedge/ca/rootCA.crt
+        tlsTunnelCertFile: /etc/kubeedge/certs/server.crt
+        tlsTunnelPrivateKeyFile: /etc/kubeedge/certs/server.key
+        writeDeadline: 15

@@ -7,7 +7,7 @@ bash ./install-k8s.sh
 
 
 kubectl patch ds -n kube-system kube-proxy  -p '{"spec":{"template":{"spec":{"affinity":{"nodeAffinity":{"requiredDuringSchedulingIgnoredDuringExecution":{"nodeSelectorTerms":[{"matchExpressions":[{"key":"node-role.kubernetes.io/edge","operator":"DoesNotExist"}]}]}}}}}}}'
-
+iptables -t nat -A OUTPUT -p tcp --dport 10350 -j DNAT --to $MASTER_NODE:10003
 sed -i "s/MASTER_NODE/$MASTER_NODE/g" cloudcore/conf/cloudcore.yaml
 mkdir /etc/kubeedge
 cp cloudcore/conf/cloudcore.yaml /etc/kubeedge
