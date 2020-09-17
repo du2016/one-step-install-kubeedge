@@ -13,6 +13,9 @@ mkdir /etc/kubeedge
 cp cloudcore/conf/cloudcore.yaml /etc/kubeedge
 cp cloudcore/cloudcore /usr/local/bin/
 cp cloudcore/conf/cloudcore.service /usr/lib/systemd/system/
+cp cloudcore/certgen.sh /etc/kubeedge
+cd /etc/kubeedge
+CLOUDCOREIPS=$$MASTER_NODE bash certgen.sh stream
 chmod +x /usr/local/bin/cloudcore
 systemctl daemon-reload
 systemctl enable cloudcore.service
@@ -28,9 +31,10 @@ sed -i "s/MASTER_NODE/$MASTER_NODE/g" edgecore/conf/edgecore.yaml
 sed -i "s/EDGE_NODE/$EDGE_NODE/g" edgecore/conf/edgecore.yaml
 scp ./install-docker.sh $EDGE_NODE:/tmp/
 ssh $EDGE_NODE "bash /tmp/install-docker.sh && rm -f /tmp/install-docker.sh"
-scp ./edgecore/edgecore /usr/local/bin/
-scp ./edgecore/conf/edgecore.service /usr/lib/systemd/system/
-scp ./edgecore/conf/edgecore.yaml /etc/kubeedge/
+scp ./edgecore/edgecore $EDGE_NODE:/usr/local/bin/
+scp ./edgecore/conf/edgecore.service $EDGE_NODE:/usr/lib/systemd/system/
+scp ./edgecore/conf/edgecore.yaml $EDGE_NODE:/etc/kubeedge/
+scp -r /etc/kubeedge/ca /etc/kubeedge/certs  $EDGE_NODE:/etc/kubeedge/
 ssh $EDGE_NODE "chmod +x /usr/local/bin/edgecore"
 ssh $EDGE_NODE "systemctl daemon-reload"
 ssh $EDGE_NODE "systemctl enable edgecore.service"
